@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Simple Copy Coupon Using HTML &amp; CSS</title>
+  <link rel="stylesheet" href="./style.css">
+  <script>
+    // Funktion für den Countdown
+    function startCountdown(duration, display) {
+      var timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = "Only " + minutes + ":" + seconds + " minutes left";
+
+        if (--timer < 0) {
+          // Countdown abgelaufen
+          display.textContent = "Expired";
+          // Weitere Aktionen hier ausführen
+        }
+      }, 1000);
+    }
+
+    // Starte den Countdown beim Laden der Seite
+    window.onload = function () {
+      var twoMinutes = 2 * 60, // 2 Minuten in Sekunden
+          display = document.querySelector('#countdown');
+      startCountdown(twoMinutes, display);
+    };
+  </script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+    <div class="card">
+      <div class="main">
+        <div class="co-img">
+          <img
+            src="https://i.ibb.co/0yY1zxt/Only-Fans-Social-Icon-Rounded-Blue.png"
+            alt=""
+          />
+        </div>
+        <div class="vertical"></div>
+        <div class="content">
+          <h2>Limited offer</h2>
+          <h1>50% <span>Off</span></h1>
+          <p id="countdown">Only 02:00 minutes left</p>
+        </div>
+      </div>
+      <div class="copy-button">
+        <input id="copyvalue" type="text" readonly value="Text me &quot;LIMITED&quot; for a free surprise 😛">
+        <button onclick="window.location.href='https://onlyfans.com/dalia-demirel';" class="copybtn btn-effect">SEND</button>
+      </div>         
+    </div>
+  </div>
+</body>
+</html>
