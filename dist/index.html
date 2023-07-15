@@ -30,12 +30,13 @@
       var twoMinutes = 2 * 60, // 2 Minuten in Sekunden
           display = document.querySelector('#countdown');
       startCountdown(twoMinutes, display);
+      document.querySelector('.coupon-popup').style.display = 'block';
     };
   </script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="container">
+  <!-- partial:index.partial.html -->
+  <div class="coupon-popup" style="display: none;">
     <div class="card">
       <div class="main">
         <div class="co-img">
